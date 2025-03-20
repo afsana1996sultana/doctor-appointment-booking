@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "0edb92d8-09a0-46ad-b9cb-f8538ba409f8",
+		"name": "DoctorsAppointments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23930654"
+	},
+	"item": [
+		{
+			"name": "Fetch doctor's slot",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|fVedatdbyDbdwNybM11cv2DRtkTHKsg9LAYc1i9Ib5e3a17e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/doctors/availability",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"doctors",
+						"availability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Doctor Set Slot",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|fVedatdbyDbdwNybM11cv2DRtkTHKsg9LAYc1i9Ib5e3a17e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "doctor_id",
+							"value": "Dr. Najmul Hasan",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2025-03-20",
+							"type": "text"
+						},
+						{
+							"key": "time_slot",
+							"value": "12:30",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/doctors/availability",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"doctors",
+						"availability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch doctor's slot/{id}/availability",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|fVedatdbyDbdwNybM11cv2DRtkTHKsg9LAYc1i9Ib5e3a17e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/doctors/6/availability",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"doctors",
+						"6",
+						"availability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient Appointment List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|fVedatdbyDbdwNybM11cv2DRtkTHKsg9LAYc1i9Ib5e3a17e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/appointments",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Appointment Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|fVedatdbyDbdwNybM11cv2DRtkTHKsg9LAYc1i9Ib5e3a17e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "doctor_id",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "patient_id",
+							"value": "Tanjilan Sultana",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2025-03-20",
+							"type": "text"
+						},
+						{
+							"key": "time_slot",
+							"value": "15:40",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/appointments/book",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"appointments",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "doctor-appointments/{{doctor_id}}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|fVedatdbyDbdwNybM11cv2DRtkTHKsg9LAYc1i9Ib5e3a17e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/appointments/5",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"appointments",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "appointments/{{patient_id}}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|fVedatdbyDbdwNybM11cv2DRtkTHKsg9LAYc1i9Ib5e3a17e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/appointments/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"appointments",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "5|fVedatdbyDbdwNybM11cv2DRtkTHKsg9LAYc1i9Ib5e3a17e",
+			"type": "string"
+		}
+	]
+}
